@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+nav {
+  height: 10vh;
+  padding: 10px 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#logo {
+  font-family: "Permanent Marker", cursive;
+  font-size: 24px;
+  color: rgb(2, 2, 135);
+  text-decoration: none;
+}
+.nav-item {
+  color: rgb(2, 2, 135);
+  text-decoration: none;
+  padding: 10px 14px;
+}
+.nav-item:hover {
+  color: lightslategray;
+}
+.nav-menu {
+  margin-right: 5vw;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-menu li {
+  margin-left: 20px;
+  list-style: none;
+}
+.btn {
+    padding: 8px 16px;
+    color: whitesmoke;
+    color: rgb(238, 220, 223);
+    background-color: rgb(2, 2, 167);
+    text-decoration: none;
+    border-radius: 10px;
+}
+.btn:hover {
+    text-decoration: none;
+    background-color: mediumblue;
+}
+.register {
+  background-color:rgb(84, 0, 162);
+}
+section {
+    position: relative;
+    background: url(./IMG_4366.jpg) center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+section h1, h3 {
+    z-index: 3;
+    color: white;
+}
+.background {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(to right, rgb(68, 68, 118), rgb(25, 25, 89) ) ;
+    opacity: 0.65;
+}
+.form-wrapper {
+  padding: 20px 20px;
+  background: rgba(0,0,0, 0.5);
+  border-radius: 10px;
+  z-index: 1;
+}
+.form {
+  position: relative;
+  z-index: 5;
+}
+.form-wrapper p {
+  /* display: flex;
+  justify-content: center; */
+  /* flex-direction: column; */
+  color: lightgray;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.form label {
+  color: rgb(228, 228, 228);
+  font-size: 14px;
+}
+.form span {
+  font-size: 14px;
+  display: block;
+}
+.form input {
+  width: 300px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin-top: 10px;
+  background-color: rgb(242, 242, 242);
+}
+.form input[type=submit] {
+    font-size: 14px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    color: lightgrey;
+    background-color: rgb(21, 21, 21);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.form input[type=submit]:hover{
+  color: white;
+  background-color: black;
+}
+
+.error {
+  color: red;
+  display: none;
+}
+
+.line-btn{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+  transform: translateX(-14px);
+  width: 180px;
+  height: 50px;
+  opacity: 0.95;
+  background: url(./btn_login_base.png) center no-repeat;
+  cursor: pointer;
+}
+.line-btn:hover {
+  opacity: 1;
+}
+.margin-top {
+  margin-top: 20px;
+}
+.margin-top a, span {
+  color: lightgray;
+  font-size: 14px;
+  margin-right: 5px;
+}
+.margin-top a:hover {
+  color: #fff;
+}

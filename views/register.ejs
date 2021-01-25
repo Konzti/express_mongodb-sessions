@@ -1,0 +1,29 @@
+<%- include('partials/header'); %>
+<body>
+<%- include('partials/nav'); %>
+     <section>
+        <div class="background"></div>
+            <div class="form-wrapper">
+                <div class="line-btn"></div>
+                <form class="form" action="/register" method="post">
+                    <label for="username">Username:</label><span class="username error">test</span>
+                    <input type="text" id="username" name="username" required><br>
+                    <label for="email">Email:</label><span class="email error">Please enter a valid email</span>
+                    <input type="text" id="email" name="email" required><br>
+                    <label for="password">Password:</label><span class="password error"></span>
+                    <input type="password" id="password" name="password" required><br>
+                    <label for="password">Repeat password:</label><br>
+                    <input type="password" id="password2" name="password2" required><br>
+                    <input class="submit" type="submit" value="Submit">
+                </form>
+        </div>
+    </section>
+    <!-- <script>
+        const form = document.querySelector("form");
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+
+    </script> -->
+</body>
+</html>
