@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import jwt from 'jsonwebtoken';
 import env from 'dotenv';
 import User from '../models/User.js';
 
@@ -38,6 +37,7 @@ const createToken = (id) => {
 
 router.post('/', async (req, res) => {
     const {username, email, password} = req.body;
+     console.log(req.body);
     try {
         // await User.findOne({ email }).then((user => {
         // if (user) {
@@ -48,8 +48,8 @@ router.post('/', async (req, res) => {
                 email,
                 password
             });
-        const token = createToken(newUser._id);
-        res.cookie('auth', token);
+        // const token = createToken(newUser._id);
+        // res.cookie('auth', token);
         res.status(200).json({newUser});
         }
     // }));
