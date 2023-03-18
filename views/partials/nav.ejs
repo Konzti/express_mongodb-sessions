@@ -6,8 +6,8 @@
     <li class="hover:text-gray-300"><a href="/">Home</a></li>
     <% if (locals.user) { %>
     <li class="hover:text-gray-300"><a href="/dashboard">Dashboard</a></li>
-    <li class="bg-red-400 p-2 rounded-md hover:text-gray-300 hover:bg-red-600">
-      <a class="btn register" href="/logout">Logout</a>
+    <li>
+      <a class="bg-red-400 p-2 rounded-md hover:text-gray-300 hover:bg-red-600" href="/logout">Logout</a>
     </li>
     <%} else { %>
     <li class="hover:text-gray-300"><a class="btn" href="/login">Login</a></li>

@@ -1,15 +1,15 @@
 <%- include('partials/head'); %>
 <body class="h-screen bg-slate-800 flex flex-col">
-<%- include('partials/nav'); %>
+  <%- include('partials/nav'); %>
 
-    <section class="flex flex-col items-center justify-start flex-1 text-white">
-        
-        <h1 class="text-3xl mt-10 mb-3">Dashboard</h1>
-        <% if (locals.user) { %>
-            <p class="text-yellow-300 text-3xl"><%= locals.user.userName %></p>
-            <p class="text-yellow-300 text-3xl"><%= locals.user.email %></p>
-            <img src=<%= locals.user.picture %> alt="user_avatar" class="h-[8rem] w-[8rem] rounded-full mt-3">
-            <% } %>
-    </section>
-</body>
-</html>
+  <section class="flex flex-col items-center justify-start flex-1 text-white">
+    <h1 class="text-3xl mt-10 mb-3">Dashboard</h1>
+    <% if (locals.user) { %>
+        <p class="text-yellow-300 text-3xl"><%= locals.user.userName %></p>
+        <p class="text-yellow-300 text-3xl"><%= locals.user.email %></p>
+
+       <% if (locals.user.picture) { %> <img src=<%=locals.user.picture%> alt="user_avatar" class="h-[8rem] w-[8rem] rounded-full mt-3"/> 
+       <% } %>
+    <% } %>
+  </section>
+<%- include('partials/footer'); %>
