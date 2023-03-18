@@ -1,10 +1,15 @@
-<%- include('partials/header'); %>
-<body>
+<%- include('partials/head'); %>
+<body class="h-screen bg-slate-800 flex flex-col">
 <%- include('partials/nav'); %>
-    <section>
-        <div class="background"></div>
-        <h1>Welcome to the Public Home Page</h1>
-        <h3>This is the Node JS Test website</h3>
-    </section> 
+
+    <section class="flex flex-col items-center justify-start flex-1 text-white">
+        <div class="mt-10 text-3xl">
+            <% if (locals.user) { %>
+                <h2 >👋🏾 Welcome back, <%= locals.user.userName %></h2>
+            <% } else { %>
+                <h2>Hello, stranger!</h2>
+            <% } %>
+        </div>
+    </section>
 </body>
 </html>

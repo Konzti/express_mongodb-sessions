@@ -1,29 +1,32 @@
-<%- include('partials/header'); %>
-<body>
+<%- include('partials/head'); %>
+<body class="h-screen bg-slate-800 flex flex-col">
 <%- include('partials/nav'); %>
-     <section>
-        <div class="background"></div>
-            <div class="form-wrapper">
-                <div class="line-btn"></div>
-                <form class="form" action="/register" method="post">
-                    <label for="username">Username:</label><span class="username error">test</span>
-                    <input type="text" id="username" name="username" required><br>
-                    <label for="email">Email:</label><span class="email error">Please enter a valid email</span>
-                    <input type="text" id="email" name="email" required><br>
-                    <label for="password">Password:</label><span class="password error"></span>
-                    <input type="password" id="password" name="password" required><br>
-                    <label for="password">Repeat password:</label><br>
-                    <input type="password" id="password2" name="password2" required><br>
-                    <input class="submit" type="submit" value="Submit">
+        <section class="flex flex-col items-center justify-center flex-1">
+            <div class="p-3 rounded-md bg-black bg-opacity-70 text-white flex flex-col w-full max-w-[500px]">
+                <form class="line_login_form" action="/api/auth/line" method="post">
+                    <button type="submit">
+                       <img src="./btn_login_base.png" alt="login_with_line">
+                    </button>
                 </form>
-        </div>
+                <hr class="my-3"">
+                <form class="form" action="/register" method="post" class="flex flex-col">
+                    <div class="flex flex-col w-full mb-3">
+                        <label for="username">Username:</label>
+                        <input class="text-black outline-none p-3 rounded-md" type="text" id="username" name="username" required>
+                    </div>
+                    <div class="flex flex-col w-full mb-3">
+                        <label for="email">Email:</label>
+                        <input class="text-black outline-none p-3 rounded-md" type="email" id="email" name="email" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="password">Password:</label>
+                        <input class="text-black outline-none p-3 rounded-md" type="password" id="password" name="password" required>
+                    </div>
+                    <input class="my-3 rounded-md p-3 bg-blue-600 cursor-pointer hover:bg-blue-700" type="submit" value="Submit">
+                </form>
+                  
+            </div>
+           
     </section>
-    <!-- <script>
-        const form = document.querySelector("form");
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-        });
-
-    </script> -->
 </body>
 </html>

@@ -1,21 +1,29 @@
-<%- include('partials/header'); %>
-<body>
+<%- include('partials/head'); %>
+<body class="h-screen bg-slate-800 flex flex-col">
 <%- include('partials/nav'); %>
-<section>
-    <div class="background"></div>
-    <div class="form-wrapper">
-        <div class="line-btn"></div>
-        <div><p>or login with your email/password combination</p></div>
-        <form class="form" action="/login" method="post">
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email" required><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br>
-            <input class="submit" type="submit" value="Submit">
+<section class="flex flex-col items-center justify-center flex-1">
+    <div class="p-3 rounded-md bg-black bg-opacity-70 text-white flex flex-col w-full max-w-[500px]">
+        <form class="line_login_form" action="/api/auth/line" method="post">
+            <button type="submit">
+               <img src="./btn_login_base.png" alt="login_with_line">
+            </button>
         </form>
-        <div class="margin-top">
-            <span>Not a user? </span><a href="/register">Register</a>
-        </div>
+        <hr class="my-3"">
+        <form class="form" action="/login" method="post" class="flex flex-col">
+            <div class="flex flex-col w-full mb-3">
+                <label for="email">Email:</label>
+                <input class="text-black outline-none p-3 rounded-md" type="text" id="email" name="email" required>
+            </div>
+            <div class="flex flex-col relative">
+                <% if (locals.error) { %>
+                    <span class="absolute top-0 left-[50%] translate-x-[-50%] text-red-500"><%= locals.error %></span>
+                    <% } %>
+                <label for="password">Password:</label>
+                <input class="text-black outline-none p-3 rounded-md" type="password" id="password" name="password" required>
+            </div>
+            <input class="my-3 rounded-md p-3 bg-blue-600 cursor-pointer hover:bg-blue-700" type="submit" value="Submit">
+        </form>
+            <p>Not a user? <a href="/register">  ➡️ Register</a></p>
     </div>
 </section>
 <script>

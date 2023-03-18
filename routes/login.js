@@ -1,14 +1,11 @@
 import { Router } from 'express';
+import { loginHandler } from '../handlers/login.js';
 
 const router = Router();
 
 router.get('/', (req, res) => {
-    res.render('login', {title: "Login"});
-})
-router.post('/', (req, res) => {
-    console.log(req.body);
-    res.json(req.body);
-    // res.send('welcome, ' + req.body.email);
-})
+    res.render('login', { title: "Login" });
+});
+router.post('/', loginHandler);
 
 export default router;
